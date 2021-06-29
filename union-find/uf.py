@@ -4,11 +4,16 @@ import sys
 if __name__ == '__main__':
   line = None
   try:
-    while True:
+    nums = int(input('How many elements? '))
+    while nums:
       line = input('> ')
       # if empty input we are done
       if (not len(line)):
         break
-  except:
-      pass
+      p,q = [int(i) for i in line.split()]
+      print(f'{p}--{q}')
+      nums -= 1
+  except ValueError as e:
+    print(e)
+  
   print('bye')
